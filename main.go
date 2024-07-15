@@ -17,6 +17,8 @@ func main() {
 	e.GET("/", func(c echo.Context) error {
 		return component.Render(context.Background(), c.Response().Writer)
 	})
+	e.Static("/css", "css")
+	e.Static("/fonts", "fonts")
 	e.Static("/static", "static")
 	e.Logger.Fatal(e.Start(":5000"))
 }
