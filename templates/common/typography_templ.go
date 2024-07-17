@@ -63,7 +63,7 @@ func Typography(variant string, label string, className string) templ.Component 
 				return templ_7745c5c3_Err
 			}
 		} else {
-			var templ_7745c5c3_Var5 = []any{"text-white font-sans text-sm", className}
+			var templ_7745c5c3_Var5 = []any{"text-black font-sans text-sm", className}
 			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var5...)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err

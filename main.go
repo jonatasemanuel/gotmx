@@ -20,5 +20,5 @@ func main() {
 	e.Static("/css", "css")
 	e.Static("/fonts", "fonts")
 	e.Static("/static", "static")
-	e.Logger.Fatal(e.Start(":5000"))
+	e.Logger.Fatal(e.Start(":8000"))
 }

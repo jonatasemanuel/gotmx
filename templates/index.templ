@@ -16,10 +16,14 @@ templ Index() {
 		</head>
 		<body>
 			<div class="h-screen w-screen bg-black flex flex-col justify-center items-center relative">
-				@common.Typography("header", "TODO-LIST", "mb-6")
-				<div class="bg-white p-6 rounded-2x1 shadow-lg w-full"></div>
-				@Hello("Get out")
-				@common.Button("This is a button")
+				<div class="w-screen bg-black flex flex-col justify-center items-center relative max-w-2x1">
+					@common.Typography("header", "TODO-LIST", "mb-6")
+					@common.Button("+ todo", "mb-12")
+					<div class="bg-white p-6 rounded-md shadow-lg">
+						@TodoCardTempl(TodoCard{id: "test", text: "Todod first one."})
+					</div>
+					// @Hello("Get out")
+				</div>
 			</div>
 		</body>
 	</html>
