@@ -1,6 +1,9 @@
 package templates
 
-import "github.com/jonatasemanuel/gotmx-demo/templates/common"
+import (
+	"github.com/jonatasemanuel/gotmx-demo/templates/common"
+	"github.com/jonatasemanuel/gotmx-demo/templates/components"
+)
 
 templ Index() {
 	<html lang="en">
@@ -8,6 +11,7 @@ templ Index() {
 			<meta charset="utf-8"/>
 			<title>Golang TODO</title>
 			<link href="/css/output.css" rel="stylesheet"/>
+			<script src="https://unpkg.com/htmx.org@2.0.1"></script>
 			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 			<link
 				rel="stylesheet"
@@ -17,10 +21,12 @@ templ Index() {
 		<body>
 			<div class="h-screen w-screen bg-black flex flex-col justify-center items-center relative">
 				<div class="w-screen bg-black flex flex-col justify-center items-center relative max-w-2x1">
-					@common.Typography("header", "TODO-LIST", "mb-6")
-					@common.Button("+ todo", "mb-12")
-					<div class="bg-white p-6 rounded-md shadow-lg">
-						@TodoCardTempl(TodoCard{id: "test", text: "Todod first one."})
+					@common.Typography("header", "TODO-LIST", "mb-12")
+					@components.AddTodoButton()
+					@common.Input("New-todo")
+					<div class="bg-white p-6 rounded-2xl shadow-lg">
+						@TodoCardTempl(TodoCard{id: "test", text: "Todo first one."})
+						@TodoCardTempl(TodoCard{id: "test", text: "Todo second one."})
 					</div>
 					// @Hello("Get out")
 				</div>
